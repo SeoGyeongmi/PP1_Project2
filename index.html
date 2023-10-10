@@ -18,9 +18,16 @@
             color: #6A7BA2;
             line-height: 0.5;
         }
-        .listofstudents {
+        table {
+        	text-align: center;
+        	margin: 0 auto/* 테이블을 수평으로 가운데 정렬 */
+    	}
+
+    	/* 테이블 데이터 가운데 정렬 */
+    	table tr td {
             text-align: center;
-        }
+            padding: 15px; /* 내부 간격을 10px로 설정, 원하는 크기로 조절 가능 */
+    	}
     </style>
     
       
@@ -33,7 +40,7 @@
             <header>
                 <i class="fa-solid fa-school fa-3x"></i><h1> HGU Students</h1>
             </header>
-            <p>This is a program that manages students at Handong Global University</p><br>
+            <p>This is a program that manages students at Handong Global University</p><br><br><br><br><br><br>
         </div>
         
         <div> <!-- table (전체 data 담은) div -->
@@ -42,13 +49,32 @@
                     <th>학부</th><th>학번</th><th>이름</th><th>전화번호</th><th>이메일</th>
                 </tr>
                 <tr>
-                    <td>전산전자공학부</td><td>22200360</td> <td>서경미</td> <td>010-9321-6680</td> <td>22200360@handong.ac.kr</td>
+                    <td>전산전자공학부</td>
+                    <td>22200360</td> 
+                    <td>서경미</td>
+                    <td>010-9321-6680</td>
+                    <td>22200360@handong.ac.kr</td>
                 </tr>
                 <tr>
-                    <td>기계제어공학부</td><td>22300486</td> <td>나기계</td> <td>010-1212-3434</td> <td>22200360@handong.ac.kr</td>
+                    <td>기계제어공학부</td>
+                    <td>22300486</td> 
+                    <td>나기계</td> 
+                    <td>010-1212-3434</td> 
+                    <td>22200222@handong.ac.kr</td>
                 </tr>
                 <tr>
-                    <td>법학부</td><td>21900838</td> <td>마시마로</td> <td>010-5656-7878</td> <td>21900888@handong.ac.kr</td>
+                    <td>법학부</td>
+                    <td>21900838</td> 
+                    <td>마시마로</td> 
+                    <td>010-5656-7878</td> 
+                    <td>21900999@handong.ac.kr</td>
+                </tr>
+                <tr>
+                    <td>글로벌리더쉽학부</td>
+                    <td>22300838</td> 
+                    <td>새싹이</td> 
+                    <td>010-2734-0001</td> 
+                    <td>22300333@handong.ac.kr</td>
                 </tr>
             </table>
         </div>
