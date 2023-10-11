@@ -19,15 +19,56 @@
             line-height: 0.5;
         }
         table {
-        	text-align: center;
-        	margin: 0 auto/* 테이블을 수평으로 가운데 정렬 */
-    	}
-
-    	/* 테이블 데이터 가운데 정렬 */
-    	table tr td {
             text-align: center;
-            padding: 15px; /* 내부 간격을 10px로 설정, 원하는 크기로 조절 가능 */
-    	}
+            margin: 0 auto; /* 테이블을 수평으로 가운데 정렬 */
+        }
+
+        /* 테이블 데이터 가운데 정렬 */
+        table tr td {
+            text-align: center;
+            padding: 15px; /* 내부 간격을 15px로 설정 */
+        }
+
+        
+        /* 버튼 스타일 */
+        .button-container {
+            text-align: right; /* 버튼을 오른쪽으로 정렬 */
+            margin-top: 20px; /* 버튼과 테이블 간의 간격 조절 */
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #6A7BA2;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* 검색 바 스타일 */
+        .search-container {
+            text-align: right; /* 검색 바를 오른쪽으로 정렬 */
+            margin-top: 20px; /* 검색 바와 테이블 간의 간격 조절 */
+        }
+
+        .search-container input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #6A7BA2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 검색 바와 테이블 간격 조절 */
+        .search-container + div {
+            margin-top: 20px;
+        }
     </style>
     
       
@@ -36,11 +77,19 @@
 <body style="background-color:#FFDFDE">
     <div> <!-- 전체 div -->
 
+
         <div class="title"> <!-- 아이콘 + 제목 + <p> div -->
             <header>
                 <i class="fa-solid fa-school fa-3x"></i><h1> HGU Students</h1>
             </header>
-            <p>This is a program that manages students at Handong Global University</p><br><br><br><br><br><br>
+            <p>This is a program that manages students at Handong Global University</p><br>
+        </div>
+        
+         <!-- 검색 바와 Add 버튼 추가 -->
+        <div class="search-container">
+            <input type="text" placeholder="학생 검색...">
+            <button id="searchButton">검색</button>
+            <button id="addButton">Add</button>
         </div>
         
         <div> <!-- table (전체 data 담은) div -->
@@ -77,6 +126,10 @@
                     <td>22300333@handong.ac.kr</td>
                 </tr>
             </table>
+            <div class="button-container">
+            <button id="confirmButton">확인</button>
+            <button id="cancelButton">취소</button>
+        </div>
         </div>
 
         
