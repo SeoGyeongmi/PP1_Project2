@@ -4,8 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
+
+    <style>
     
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+    	header {
+            /*padding: 30px;*/
+            /*text-align: center;*/
+            font-size: 35px;
+            color: #6A7BA2;
+        }
+
+        .title {
+            text-align: center;
+            color: #6A7BA2;
+            line-height: 0.5;
+        }
+        .form-container {
+            width: 70%;
+            margin: 20px auto;
+            background-color: #6A7BA2; 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        .input-group {
+            margin-bottom: 15px;
+        }
+    
+        .input-group label {
+            display: inline-block;  /* 레이블을 인라인 블록 요소로 변경 */
+            width: 20%;  /* 레이블의 너비 조절 */
+            text-align: right;  /* 텍스트를 오른쪽 정렬 */
+            margin-right: 10px;  /* 레이블과 입력창 사이의 간격 조절 */
+            color: #FFDFDE; 
+        }
+    
+        .input-group input {
+            width: 70%;  /* 입력창의 너비 조절 */
+            display: inline-block;  /* 입력창을 인라인 블록 요소로 변경 */
+            padding: 10px;
+            border: 1px solid #6A7BA2;
+            border-radius: 5px;
+        }
+    
+        .button-container {
+            text-align: right;
+        }
+    
+        .button-container button {
+            padding: 10px 20px;
+            background-color: #FFDFDE;
+            color: #6A7BA2;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+
+    <script src="https://kit.fontawesome.com/e194b0a01e.js" crossorigin="anonymous">
+    </script>
+</head>
+</head>
+<body style="background-color:#FFDFDE">
+    
+    <div class="title"> <!-- 아이콘 + 제목 + <p> div -->
+        <header>
+            <i class="fa-solid fa-user fa-3x"></i><h1>Student Info</h1>
+        </header>
+        <p>This is the information of the student you clicked on.</p><br>
+    </div>
+    <div class="form-container">
+        <form action="#" method="post">
+            <div class="input-group">
+                <label for="department">학부:</label>
+                <input type="text" id="department" name="department" placeholder="학부를 입력하세요" required value="전산전자공학부" readonly>
+            </div>
+            <div class="input-group">
+                <label for="studentId">학번:</label>
+                <input type="text" id="studentId" name="studentId" placeholder="학번을 입력하세요" required value="22200360" readonly>
+            </div>
+            <div class="input-group">
+                <label for="name">이름:</label>
+                <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required value="서경미" readonly>
+            </div>
+            <div class="input-group">
+                <label for="phone">전화번호:</label>
+                <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요" required value="01012345678" readonly>
+            </div>
+            <div class="input-group">
+                <label for="email">이메일:</label>
+                <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required value="22200360@handong.ac.kr" readonly>
+            </div>
+            <div class="button-container">
+            	<button type="button" id="EditButton">Edit</button>
+                <button type="button" id="DeleteButton">Delete</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    	document.getElementById("EditButton").addEventListener("click", function() {
+        	window.location.href = "https://gregarious-kringle-a09e54.netlify.app/index.html";
+    	});
+
+        document.getElementById("DeleteButton").addEventListener("click", function() {
+            // confirm 창을 띄우고 사용자의 선택을 변수에 저장
+            var userChoice = confirm("해당 학생을 삭제할까요?");
+
+            // 사용자가 '확인'을 클릭했을 경우
+            if (userChoice) {
+            	alert("삭제되었습니다!");
+                window.location.href = "https://gregarious-kringle-a09e54.netlify.app/index.html";
+        	}	
+    		// 사용자가 '취소'를 클릭했을 경우 아무 동작 X.
+		});
+
+    </script>
 </body>
 </html>
