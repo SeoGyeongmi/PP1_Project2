@@ -96,6 +96,27 @@
         .search-container + div {
             margin-top: 20px;
         }
+        
+        /* 기본 스타일 (데스크탑)은 그대로 유지하고, 모바일 환경에 대한 스타일만 추가합니다. */
+
+        /* 화면 너비가 768px 이하일 때의 스타일 */
+        @media (max-width: 768px) {
+            .search-container {
+                text-align: center; /* 검색 바와 버튼을 가운데 정렬 */
+                flex-direction: column; /* 세로로 배열 */
+            }
+
+            .search-container input[type="text"], 
+            .search-container button {
+                margin-bottom: 10px; /* 요소 간 간격 추가 */
+                max-width: 100%; /* 화면 너비에 맞게 조절 */
+            }
+
+            table {
+                width: 100%; /* 테이블 너비를 100%로 변경 */
+            }
+        }
+
     </style>
     
       
@@ -143,7 +164,7 @@
                     <td>21900999</td> 
                     <td>마시마로</td> 
                     <td>010-1919-1919</td> 
-                    <td>21900001@handong.ac.kr</td>
+                    <td>21900999@handong.ac.kr</td>
                 </tr>
                 <tr data-id="21900999">
                     <td>글로벌리더쉽학부</td>

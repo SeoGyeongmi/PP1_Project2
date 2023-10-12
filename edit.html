@@ -66,6 +66,29 @@
             border: none;
             cursor: pointer;
         }
+        
+        /* 화면 너비가 768px 이하일 때의 스타일 */
+        @media (max-width: 768px) {
+            .form-container {
+                width: 60%; /* 폼 컨테이너의 너비를 확장 */
+            }
+
+            .input-group label {
+                width: 100%; /* 라벨의 너비를 100%로 설정 */
+                text-align: left; /* 텍스트를 왼쪽 정렬 */
+                margin-bottom: 10px; /* 라벨과 입력창 사이의 간격 조절 */
+            }
+
+            .input-group input {
+                width: 90%; /* 입력창의 너비를 100%로 설정 */
+            }
+
+            .button-container {
+                text-align: center; /* 버튼을 가운데 정렬 */
+            }
+        }
+
+        
     </style>
 
 
