@@ -6,6 +6,14 @@
     <title>Document</title>
 
     <style>
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 가로 중앙 정렬 */
+            justify-content: center; /* 세로 중앙 정렬 */
+            min-height: 100vh; /* 뷰포트 높이의 100% */
+        }
         header {
             /*padding: 30px;*/
             /*text-align: center;*/
@@ -123,7 +131,7 @@
     <script src="https://kit.fontawesome.com/e194b0a01e.js" crossorigin="anonymous"></script>
 </head>
 <body style="background-color:#FFDFDE">
-    <div> <!-- 전체 div -->
+    <div class ="main-container"> <!-- 전체 div -->
 
 
         <div class="title"> <!-- 아이콘 + 제목 + <p> div -->

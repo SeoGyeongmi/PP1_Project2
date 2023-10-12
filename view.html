@@ -10,8 +10,9 @@
         .main-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+            align-items: center; /* 가로 중앙 정렬 */
+            justify-content: center; /* 세로 중앙 정렬 */
+            min-height: 100vh; /* 뷰포트 높이의 100% */
         }
 
     	header {
@@ -94,41 +95,44 @@
 </head>
 <body style="background-color:#FFDFDE">
     
-    <div class="title"> <!-- 아이콘 + 제목 + <p> div -->
-        <header>
-            <i class="fa-solid fa-user fa-3x"></i><h1>Student Info</h1>
-        </header>
-        <p>This is the information of the student you clicked on.</p><br>
+    <div class="main-container">
+        <div class="title"> <!-- 아이콘 + 제목 + <p> div -->
+            <header>
+                <i class="fa-solid fa-user fa-3x"></i><h1>Student Info</h1>
+            </header>
+            <p>This is the information of the student you clicked on.</p><br>
+        </div>
+        <div class="form-container">
+            <form action="#" method="post">
+                <div class="input-group">
+                    <label for="department">학부:</label>
+                    <input type="text" id="department" name="department" placeholder="학부를 입력하세요" required value="전산전자공학부" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="studentId">학번:</label>
+                    <input type="text" id="studentId" name="studentId" placeholder="학번을 입력하세요" required value="22200360" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="name">이름:</label>
+                    <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required value="서경미" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="phone">전화번호:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요" required value="01012345678" readonly>
+                </div>
+                <div class="input-group">
+                    <label for="email">이메일:</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required value="22200360@handong.ac.kr" readonly>
+                </div>
+                <div class="button-container">
+                    <button type="button" id="ListButton">목록</button>
+                    <button type="button" id="EditButton">Edit</button>
+                    <button type="button" id="DeleteButton">Delete</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-container">
-        <form action="#" method="post">
-            <div class="input-group">
-                <label for="department">학부:</label>
-                <input type="text" id="department" name="department" placeholder="학부를 입력하세요" required value="전산전자공학부" readonly>
-            </div>
-            <div class="input-group">
-                <label for="studentId">학번:</label>
-                <input type="text" id="studentId" name="studentId" placeholder="학번을 입력하세요" required value="22200360" readonly>
-            </div>
-            <div class="input-group">
-                <label for="name">이름:</label>
-                <input type="text" id="name" name="name" placeholder="이름을 입력하세요" required value="서경미" readonly>
-            </div>
-            <div class="input-group">
-                <label for="phone">전화번호:</label>
-                <input type="tel" id="phone" name="phone" placeholder="전화번호를 입력하세요" required value="01012345678" readonly>
-            </div>
-            <div class="input-group">
-                <label for="email">이메일:</label>
-                <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required value="22200360@handong.ac.kr" readonly>
-            </div>
-            <div class="button-container">
-                <button type="button" id="ListButton">목록</button>
-            	<button type="button" id="EditButton">Edit</button>
-                <button type="button" id="DeleteButton">Delete</button>
-            </div>
-        </form>
-    </div>
+
 
     <script>
         document.getElementById("ListButton").addEventListener("click", function() {
