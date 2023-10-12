@@ -18,12 +18,19 @@
             color: #6A7BA2;
             line-height: 0.5;
         }
+        
 
         /* 테이블 데이터 가운데 정렬 */
         table tr td {
             text-align: center;
             padding: 15px; /* 내부 간격을 15px로 설정 */
         }
+        
+        /* 테이블 행에 마우스를 올렸을 때의 스타일 */
+		table tr:hover {
+    		background-color: #f5f5f5;
+    		cursor: pointer;
+		}
 
 		/* 테이블 스타일 */
         table {
@@ -117,32 +124,32 @@
                 <tr>
                     <th>학부</th><th>학번</th><th>이름</th><th>전화번호</th><th>이메일</th>
                 </tr>
-                <tr>
+                <tr data-id="22200360">
                     <td>전산전자공학부</td>
                     <td>22200360</td> 
                     <td>서경미</td>
                     <td>010-9321-6680</td>
                     <td>22200360@handong.ac.kr</td>
                 </tr>
-                <tr>
+                <tr data-id="22200222">
                     <td>기계제어공학부</td>
-                    <td>22300486</td> 
+                    <td>22300222</td> 
                     <td>나기계</td> 
-                    <td>010-1212-3434</td> 
+                    <td>010-2222-2222</td> 
                     <td>22200222@handong.ac.kr</td>
                 </tr>
-                <tr>
+                <tr data-id="21900999">
                     <td>법학부</td>
-                    <td>21900838</td> 
+                    <td>21900999</td> 
                     <td>마시마로</td> 
-                    <td>010-5656-7878</td> 
-                    <td>21900999@handong.ac.kr</td>
+                    <td>010-1919-1919</td> 
+                    <td>21900001@handong.ac.kr</td>
                 </tr>
-                <tr>
+                <tr data-id="21900999">
                     <td>글로벌리더쉽학부</td>
-                    <td>22300838</td> 
+                    <td>22300333</td> 
                     <td>새싹이</td> 
-                    <td>010-2734-0001</td> 
+                    <td>010-2323-2323</td> 
                     <td>22300333@handong.ac.kr</td>
                 </tr>
             </table>
@@ -161,6 +168,23 @@
         document.getElementById("addButton").addEventListener("click", function() {
         	window.location.href = "https://gregarious-kringle-a09e54.netlify.app/add.html";
     	});
+        
+        // 모든 테이블 행을 선택
+        var rows = document.querySelectorAll(".listofstudents tr");
+
+        // 각 행에 대해 이벤트 리스너를 추가
+        for (let i = 1; i < rows.length; i++) { // i=1부터 시작하여 헤더 행을 제외
+            rows[i].addEventListener("click", function() {
+                // data-id 값을 기반으로 URL 생성
+                var studentId = this.getAttribute("data-id");
+                var url = "https://gregarious-kringle-a09e54.netlify.app/view.html";
+                //var url = "https://gregarious-kringle-a09e54.netlify.app/student/" + studentId + ".html";
+        
+        // 생성된 URL로 이동
+        window.location.href = url;
+    });
+}
+
     </script>
     
 </body>
